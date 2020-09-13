@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" style='height: 100%'>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Home Page</title>
+  </head>
+  <style>
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+  <body style='margin: auto; width: 30%; display: block; margin-top: 10%; margin-bottom: 20%'>
+    <div>
+      <img src='static/images/shopee_logo_en_vertical.png' style='height: 200px; width: auto;' class='center'>
+      <h3 style='color: orange; text-align: center'>Search Product in SHOPEE</h3>
+      <div class="search"> 
+        <form onsubmit="window.location = '/keyword='+search.value+'&item_num='+item_num.value+'&locations='+location.value; return false;">
+          <div class='form-group'>
+            <label>Maximum Search Results</label>
+            <select class="selectpicker form-control" name="item_num">
+              {%for i in range(1, 11)%}
+                <option value="{{i*10}}">{{i*10}}</option>
+              {%endfor%}
+            </select>
+          </div>
+          <div class='form-group'>
+            <label>Location</label>
+            <select class="selectpicker form-control" name="location">
+              <option value="Taiwan">Taiwan</option>
+              <option value="Abroad">Abroad</option>
+            </select>
+          </div>
+          <div class='form-group'>
+            <input id="search" placeholder="Enter keyword" type="search" class='form-control' name="search"></input>
+            <button type="submit" class="btn btn-dark mt-4">Search</button>
+          </div>
+        </form>
+      </div>
+
+    </div> 
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
